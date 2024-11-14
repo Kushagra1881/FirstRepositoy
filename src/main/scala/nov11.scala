@@ -568,14 +568,14 @@ object nov11 {
     // calculate the total amount spent for each
     //customer in each year. This can be used to calculate CLTV.
     //Sample Data:
-  val cltvData = List(
-          (1, "2022-01-01", 100),
-          (1, "2023-02-15", 200),
-          (2, "2022-03-10", 300),
-          (2, "2023-04-20", 400),
-          (3, "2022-05-05", 500),
-          (3, "2023-06-06", 600)
-      ).toDF("customer_id", "order_date", "amount")
+//  val cltvData = List(
+//          (1, "2022-01-01", 100),
+//          (1, "2023-02-15", 200),
+//          (2, "2022-03-10", 300),
+//          (2, "2023-04-20", 400),
+//          (3, "2022-05-05", 500),
+//          (3, "2023-06-06", 600)
+//      ).toDF("customer_id", "order_date", "amount")
 
 //    val df1 = cltvData.groupBy(col("customer_id"), year(col("order_date")))
 //      .agg(sum(col("amount")).alias("sum_of_amount_per_year"))
