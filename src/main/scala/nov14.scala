@@ -349,6 +349,7 @@ object nov14 {
 //    df1.show()
 
     //---------------------------------------------------------------
+
     //20. Convert a date to timestamp and format it as "yyyy-MM-dd HH:mm".
     //o Sample Data:
     // Scala: Seq(("2024-09-30"), ("2024-10-01")).toDF("date")
