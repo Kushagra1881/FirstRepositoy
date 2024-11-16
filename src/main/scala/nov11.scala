@@ -18,7 +18,7 @@ object nov11 {
 
     import spark.implicits._
 
-    //    SPARK_PROBLEMS_FOR_PRACTICE
+    //    SPARK_PROBLEMS_FOR_PRACTICE_Assignment 2
 
 
     //    1. Count Items per Category
