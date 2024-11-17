@@ -20,7 +20,6 @@ object nov11 {
 
     //    SPARK_PROBLEMS_FOR_PRACTICE_Assignment 2
 
-
     //    1. Count Items per Category
     //    Question: Count the number of products in each category.
     //    Sample Data:
