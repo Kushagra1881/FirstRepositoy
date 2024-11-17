@@ -1261,6 +1261,7 @@ object nov4 {
 //    9. Identify "Moderate Risk" students who have scored above 70 in
     //    at least three subjects.
 //     Scala Spark Data
+
 //  val students = List(
 //    ("Student1", 70, 45, 60, 65, 75),
 //    ("Student2", 80, 55, 58, 62, 67),
