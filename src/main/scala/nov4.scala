@@ -120,13 +120,23 @@ object nov4 {
 //      ("aadil", "ProjectN", 90)
 //      ).toDF("name", "project", "hours")
 //
-//    workload.select(initcap(col("name")).alias("capital_name"),
-//      when(col("hours")>=200,"Overloaded")
-//      .when(col("hours")>=100 && col("hours")<200,"Balanced")
-//      .otherwise("Underutilized").alias("workload_status")).show()
-//
-//    workload.groupBy("name").agg(sum(col("hours")).alias("total_hours")).show()
+// val df1 = workload.select(initcap(col("name")).alias("capital_name"),col("hours"))
+//   .groupBy(col("capital_name")).agg(sum(col("hours")).alias("total_time_spend"))
+//   .orderBy(col("total_time_spend").desc)
 
+// val df2 = df1.select(col("capital_name"),col("total_time_spend"),
+//   when(col("total_time_spend")>=200,"Overloaded")
+//     .when(col("total_time_spend")>=100 && col("total_time_spend")<200,"Balanced")
+//     .otherwise("Underutilized").alias("performance_status"))
+//   .orderBy(col("total_time_spend").desc)
+
+// val df3 = df2.select(col("performance_status"), col("capital_name"))
+//   .groupBy(col("performance_status")).agg(count(col("capital_name"))
+//     .alias("count_by_category"))
+
+// df1.show()
+// df2.show()
+// df3.show()
 
     //---------------------------------------------------------------
 
