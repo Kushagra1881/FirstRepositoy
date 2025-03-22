@@ -160,16 +160,16 @@ object nov4 {
 //      ("nishad", 60)
 //    ).toDF("name", "hours_worked")
 //
-// val df1 = employees.select(initcap(col("name")).alias("capital_name"),col("hours_worked"),
-//   when(col("hours_worked")>=60,"Excessive Overtime")
-//     .when(col("hours_worked")>=45 && col("hours_worked")<60,"Standard Overtime")
-// .otherwise("No Overtime").alias("performance_status"))
-
-// val df2 = df1.select(col("capital_name"),col("performance_status"),col("hours_worked"))
-//   .groupBy(col("performance_status"))
-//   .agg(count(col("capital_name")).alias("count_by_category"),
-//     sum(col("hours_worked")).alias("total_hours_worked"),
-//     collect_list("capital_name").alias("names_per_category"))
+    // val df1 = employees.select(initcap(col("name")).alias("capital_name"),col("hours_worked"),
+    //   when(col("hours_worked")>=60,"Excessive Overtime")
+    //     .when(col("hours_worked")>=45 && col("hours_worked")<60,"Standard Overtime")
+    // .otherwise("No Overtime").alias("performance_status"))
+    
+    // val df2 = df1.select(col("capital_name"),col("performance_status"),col("hours_worked"))
+    //   .groupBy(col("performance_status"))
+    //   .agg(count(col("capital_name")).alias("count_by_category"),
+    //     sum(col("hours_worked")).alias("total_hours_worked"),
+    //     collect_list("capital_name").alias("names_per_category"))
 
 // df1.show()
 // df2.show(false)
@@ -196,16 +196,20 @@ object nov4 {
 //      ("nishad", 25)
 //    ).toDF("name", "age")
 //
-//    val df1= customers.select(initcap(col("name")).alias("capital_name"),col("age"),
-//      when(col("age")<=25,"Youth")
-//        .when(col("age")>25 && col("age")<=45,"Adult")
-//        .otherwise("Senior").alias("age_group_status"))
-//
-//    val df2= df1.groupBy("age_group_status").agg(collect_list("capital_name"))
-//      .alias("total_customers")
-//
-//    df1.show()
-//    df2.show()
+    // val df1 = customers.select(initcap(col("name")).alias("capital_name"), col("age"),
+    //   when(col("age")<= 25,"Youth").when(col("age")>25 && col("age")<45,"Adult")
+    //     .otherwise("Senior").alias("age_status"))
+
+    // val df2 = df1.select(col("capital_name"),col("age_status"))
+    //   .groupBy(col("age_status"))
+    //   .agg(count(col("capital_name")).alias("count_per_category"),
+    //     collect_list(col("capital_name")).alias("name_per_category"))
+
+    // df1.show()
+    // df2.show(false)
+
+    // scala.io.StdIn.readLine()
+    
     //---------------------------------------------------------------
 //    7. Vehicle Mileage Analysis
 //      Classify each vehicle’s mileage as "High Efficiency"
