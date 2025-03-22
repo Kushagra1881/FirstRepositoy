@@ -160,17 +160,21 @@ object nov4 {
 //      ("nishad", 60)
 //    ).toDF("name", "hours_worked")
 //
-//   val df1= employees.select(initcap(col("name")).alias("capital_name"),
-//      when(col("hours_worked")>=60,"Excessive Overtime")
-//        .when(col("hours_worked")>=45 && col("hours_worked")<60,"Standard Overtime")
-//        .otherwise("No Overtime").alias("workload_status"))
-//
-//    val df2= df1.groupBy("workload_status").agg(collect_list("capital_name"))
-//      .alias("total_hours")
-//
-//    df1.show()
-//    df2.show()
-//    scala.io.StdIn.readLine()
+// val df1 = employees.select(initcap(col("name")).alias("capital_name"),col("hours_worked"),
+//   when(col("hours_worked")>=60,"Excessive Overtime")
+//     .when(col("hours_worked")>=45 && col("hours_worked")<60,"Standard Overtime")
+// .otherwise("No Overtime").alias("performance_status"))
+
+// val df2 = df1.select(col("capital_name"),col("performance_status"),col("hours_worked"))
+//   .groupBy(col("performance_status"))
+//   .agg(count(col("capital_name")).alias("count_by_category"),
+//     sum(col("hours_worked")).alias("total_hours_worked"),
+//     collect_list("capital_name").alias("names_per_category"))
+
+// df1.show()
+// df2.show(false)
+
+// scala.io.StdIn.readLine()
 
     //---------------------------------------------------------------
 
